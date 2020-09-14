@@ -46,7 +46,7 @@ redirectUrl=http://localhost:3000/auth/callback
 state=SuPeR-lOnG-sEcReT
 ```
    
-**NOTE**: Make sure to remove the `<...>` placeholders. Your issuer should look something like: `https://dev-123456.okta.com/oauth2/default`.
+**NOTE**: Make sure to remove the `{...}` placeholders. Your issuer should look something like: `https://dev-123456.okta.com/oauth2/default`.
 
 You should now be able to run your app and authentication with Okta:
 
