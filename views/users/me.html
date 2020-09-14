@@ -1,0 +1,11 @@
+<%- await include('views/shared/header.html', { title }); %>
+
+<h1>My Profile</h1>
+
+<ul>
+<% for(var p in user){ %>
+  <li><strong><%= p %>: </strong><%= user[p] %></li>
+<% } %>
+</ul>
+
+<%- await include('views/shared/footer.html'); %>
