@@ -7,7 +7,7 @@ This is the companion code for [this blog post](https://developer.okta.com/blog/
 Clone the repo
 
 ```sh
-git clone 
+git clone https://github.com/oktadeveloper/okta-deno-auth-example.git
 ```
 
 ## Get Help
