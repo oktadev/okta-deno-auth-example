@@ -1,5 +1,5 @@
-import { Router } from 'https://deno.land/x/opine@0.12.0/mod.ts';
-import { config } from "https://deno.land/x/dotenv/mod.ts";
+import { Router } from 'https://deno.land/x/opine@1.9.0/mod.ts';
+import { config } from "https://deno.land/x/dotenv@v3.1.0/mod.ts";
 
 const auth = new Router();
 
