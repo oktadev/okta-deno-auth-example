@@ -1,4 +1,4 @@
-import { config } from 'https://deno.land/x/dotenv/mod.ts';
+import { config } from './../deps.ts';
 
 export const ensureAuthenticated = async (req:any, res:any, next:any) => {
   const user = req.app.locals.user;

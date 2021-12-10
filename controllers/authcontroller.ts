@@ -1,5 +1,4 @@
-import { Router } from 'https://deno.land/x/opine@0.12.0/mod.ts';
-import { config } from "https://deno.land/x/dotenv/mod.ts";
+import { Router, config } from './../deps.ts';
 
 const auth = new Router();
 
@@ -26,13 +25,14 @@ auth.get('/callback', (req, res) => {
   })
   .then((response:any) => {
     response.json().then((data:any) => {
-      if(response.status !== 200){
+      if(!response.status.ok){
         res.send(data);
+      } else {
+        const user = parseJwt(data.id_token);
+        req.app.locals.user = user;
+        req.app.locals.isAuthenticated = true;
+        res.location(req.query.state.split(':')[1] || '/').sendStatus(302);
       }
-      const user = parseJwt(data.id_token);
-      req.app.locals.user = user;
-      req.app.locals.isAuthenticated = true;
-      res.location(req.query.state.split(':')[1] || '/').sendStatus(302);
     })
   });
 });
